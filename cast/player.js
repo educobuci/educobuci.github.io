@@ -798,7 +798,6 @@ sampleplayer.CastPlayer.prototype.loadVideo_ = function(info) {
   var url = info.message.media.contentId;
   var protocolFunc = sampleplayer.getProtocolFunction_(info.message.media);
   var wasPreloaded = false;
-  host.licenseUrl = "https://widevine.itaas.uuxservices.com/default.aspx";
 
   this.letPlayerHandleAutoPlay_(info);
   if (!protocolFunc) {
@@ -834,6 +833,7 @@ sampleplayer.CastPlayer.prototype.loadVideo_ = function(info) {
         'url': url,
         'mediaElement': this.mediaElement_
       });
+      host.licenseUrl = "https://widevine.itaas.uuxservices.com/default.aspx";
       host.onError = loadErrorCallback;
       this.player_ = new cast.player.api.Player(host);
       this.player_.load(protocolFunc(host));
