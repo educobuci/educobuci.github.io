@@ -798,6 +798,7 @@ sampleplayer.CastPlayer.prototype.loadVideo_ = function(info) {
   var url = info.message.media.contentId;
   var protocolFunc = sampleplayer.getProtocolFunction_(info.message.media);
   var wasPreloaded = false;
+  host.licenseUrl = "https://widevine.itaas.uuxservices.com/default.aspx";
 
   this.letPlayerHandleAutoPlay_(info);
   if (!protocolFunc) {
